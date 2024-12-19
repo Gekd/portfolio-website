@@ -36,7 +36,6 @@ body {
   filter: invert(1);
 }
 #skills div {
-  width: 100%;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -45,6 +44,18 @@ body {
 #skills div:hover {
   color: var(--green-color);
   filter: invert(0.4) sepia(1) saturate(10) hue-rotate(90deg);
+}
+#contact a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+  text-decoration: none;
+  color: #000;
+  filter: invert(1);
+}
+#contact a:hover {
+  filter: invert(0.4) sepia(1) saturate(10) hue-rotate(200deg);
 }
 .main {
   flex: 2;
