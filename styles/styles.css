@@ -1,0 +1,70 @@
+:root {
+  --bg-color: rgb(22, 22, 22);
+  --bg-color-light: rgb(33, 33, 33);
+  --text-color: rgb(255, 255, 255);
+  --green-color: rgb(60, 200, 100);
+  --blue-color: rgb(0, 100, 200);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  margin: 0px;
+  height: calc(100vh - 40px);
+  display: flex;
+  font-family: "Poppins", serif;
+  font-weight: 400;
+}
+.logo {
+  height: 200px;
+  width: 200px;
+}
+
+.left-column {
+  flex: 1;
+}
+.left-column-item {
+  padding: 10px;
+  border: 1px dashed var(--text-color);
+  border-radius: 4px;
+  margin: 0 10px 10px 0;
+}
+.image {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+}
+.main {
+  flex: 2;
+  padding: 10px;
+  border: 1px dashed var(--text-color);
+  border-radius: 4px;
+}
+
+.terminal {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color-light);
+  border-radius: 4px;
+}
+.terminal-line {
+  display: flex;
+  align-items: center;
+}
+.green-text {
+  color: var(--green-color);
+}
+.blue-text {
+  color: var(--blue-color);
+}
+
+.border-title {
+  position: absolute;
+  margin-top: -20px;
+  width: fit-content;
+  padding: 0 2px;
+  background-color: var(--bg-color);
+  font-weight: 500;
+}

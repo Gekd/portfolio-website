@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Robin Otter</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Robin Otter's portfolio">
+    <script type="text/javascript" src="scripts/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body onload="loadContent('home')">
+    <div class="left-column">
+        <div class="home left-column-item" onclick="loadContent('home')">
+            <p class="border-title">Home</p>
+            Hello I'm Robin Otter, a software engineer from  Estonia
+        </div>
+        <div class="left-column-item" id="experience">
+            <p class="border-title">Experience</p>
+            <div onclick="loadContent('experience', 0)"><p> Freelancer</p></div>
+            <p> Software Engineer @Rent&go</p>
+            <p> Activity Coordinator @360 KRAADI</p>
+            <p> Content creator @CTF Tech</p>
+        </div>
+        <div class="left-column-item" id="projects">
+            <p class="border-title">Projects</p>
+            <div onclick="loadContent('projects', 0)"><p> Busiest time calculator</p></div>
+            <p> Portfolio Website </p>
+        </div>
+        <div class="left-column-item" id="skills">
+            <p class="border-title">Skills - Tools</p>
+            <div><img src="images/csharp.svg" class="image" alt="C#">C#</div>
+            <p> C# </p>
+            <p> HTML </p>
+            <p> CSS </p>
+            <p> Javascript </p>
+            <p> Git </p>
+            <p> Flutter </p>
+            <p> Vue </p>
+            <p> Docker </p>
+            <p> Wordpress </p>
+            <p> UI / UX </p>
+        </div>
+        <div class="left-column-item" id="contact">
+            <p class="border-title">Contact</p>
+            <p> Email </p>
+            <p> LinkedIn </p>
+            <p> Github </p>
+        </div>
+    </div>
+    <div class="main" id="main">
+            <img src="images/ascii-logo.png" class="logo" alt="logo">
+            <button onclick="loadContent('projects')">Load File</button>
+
+        <div id="selected">
+        </div>
+    </div>
+
+</body>
+
+</html>
+
