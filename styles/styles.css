@@ -35,6 +35,17 @@ body {
   height: 20px;
   filter: invert(1);
 }
+#skills div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+}
+#skills div:hover {
+  color: var(--green-color);
+  filter: invert(0.4) sepia(1) saturate(10) hue-rotate(90deg);
+}
 .main {
   flex: 2;
   padding: 10px;
