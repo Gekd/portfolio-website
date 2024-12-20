@@ -35,6 +35,25 @@ body {
   height: 20px;
   filter: invert(1);
 }
+#experience div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+}
+#experience div:hover {
+  color: var(--green-color);
+}
+#projects div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+}
+#projects div:hover {
+  color: var(--blue-color);
+}
+
 #skills div {
   display: flex;
   align-items: center;
@@ -42,8 +61,7 @@ body {
   padding: 4px 0;
 }
 #skills div:hover {
-  color: var(--green-color);
-  filter: invert(0.4) sepia(1) saturate(10) hue-rotate(90deg);
+  filter: brightness(0) saturate(100%) invert(62%) sepia(74%) saturate(407%) hue-rotate(85deg) brightness(92%) contrast(89%);
 }
 #contact a {
   display: flex;
@@ -57,6 +75,7 @@ body {
 #contact a:hover {
   filter: invert(0.4) sepia(1) saturate(10) hue-rotate(200deg);
 }
+
 .main {
   flex: 2;
   padding: 10px;

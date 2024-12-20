@@ -97,3 +97,66 @@ function loadContent(fileName, id) {
             console.error(`Error loading JSON data: ${error.message}`);
         });
 }
+
+
+// TODO: Fix this function to load the experience and project from the JSON files
+function onLoad() {
+    console.log("Page loaded");
+    loadContent("home");
+
+    fetch(`data/experience.json`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to load data/${fileName}.json`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            var list = [];
+
+            data.data.forEach((item, index) => {
+                var experience = document.createElement("div");
+                experience.innerText = item.name + " @ " + item.company;
+                experience.onclick = function () {
+                    loadContent("experience", index);
+                };
+                list.push(experience);
+            });
+
+            list.forEach(item => {
+                document.getElementById("experience").appendChild(item);
+            });
+
+        })
+        .catch(error => {
+            console.error(`Error loading JSON data: ${error.message}`);
+        });
+
+    fetch(`data/projects.json`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to load data/${fileName}.json`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            var list = [];
+
+            data.data.forEach((item, index) => {
+                var project = document.createElement("div");
+                project.innerText = item.name;
+                project.onclick = function () {
+                    loadContent("projects", index);
+                };
+                list.push(project);
+            });
+
+            list.forEach(item => {
+                document.getElementById("projects").appendChild(item);
+            });
+
+        })
+        .catch(error => {
+            console.error(`Error loading JSON data: ${error.message}`);
+        });
+}

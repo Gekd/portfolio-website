@@ -13,23 +13,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
-<body onload="loadContent('home')">
+<body onload="onLoad()">
     <div class="left-column">
         <div class="home left-column-item" onclick="loadContent('home')">
             <p class="border-title">Home</p>
-            Hello I'm Robin Otter, a software engineer from  Estonia
+            Hello I'm <span style="font-weight: 600;">Robin Otter</span>, a software engineer from  Estonia
         </div>
         <div class="left-column-item" id="experience">
             <p class="border-title">Experience</p>
-            <div onclick="loadContent('experience', 0)"><p> Freelancer</p></div>
-            <p> Software Engineer @Rent&go</p>
-            <p> Activity Coordinator @360 KRAADI</p>
-            <p> Content creator @CTF Tech</p>
         </div>
         <div class="left-column-item" id="projects">
             <p class="border-title">Projects</p>
-            <div onclick="loadContent('projects', 0)"><p> Busiest time calculator</p></div>
-            <p> Portfolio Website </p>
         </div>
         <div class="left-column-item" id="skills">
             <p class="border-title">Tools</p>
