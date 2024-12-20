@@ -82,7 +82,12 @@ body {
   border: 1px dashed var(--text-color);
   border-radius: 4px;
 }
-
+.logo-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 10px;
+}
 .terminal {
   padding: 10px;
   display: flex;
@@ -108,4 +113,104 @@ body {
   padding: 0 2px;
   background-color: var(--bg-color);
   font-weight: 500;
+}
+#header {
+  display: none;
+}
+#mobile-menu {
+  display: none;
+}
+#mobile-experience div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+}
+#mobile-experience div:hover {
+  color: var(--green-color);
+}
+#mobile-projects div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+}
+#mobile-projects div:hover {
+  color: var(--blue-color);
+}
+#mobile-skills div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+}
+#mobile-skills div:hover {
+  filter: brightness(0) saturate(100%) invert(62%) sepia(74%) saturate(407%) hue-rotate(85deg) brightness(92%) contrast(89%);
+}
+#mobile-skills:active, #mobile-skills:visited, #mobile-skills:focus {
+  color: var(--text-color);
+}
+#mobile-contact {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    width: calc(100% - 8px);
+    flex-direction: column;
+    height: auto;
+    padding: 4px;
+    margin: 0px;
+  }
+  .left-column-item {
+    margin: 0 0 10px 0;
+  }
+  .left-column {
+    display: none;
+  }
+ 
+  .logo-container {
+    display: none;
+  }
+
+
+  #header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px dashed var(--text-color);
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .header-logo {
+    height: 30px;
+    width: 30px;
+  }
+  #header-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    filter: invert(1);
+  }
+  #mobile-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  #mobile-contact a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 0;
+    text-decoration: none;
+    color: #000;
+    filter: invert(1);
+  }
+  #mobile-contact a:hover {
+    filter: invert(0.4) sepia(1) saturate(10) hue-rotate(200deg);
+  }
 }

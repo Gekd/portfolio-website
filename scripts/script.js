@@ -8,7 +8,6 @@ function loadContent(fileName, id) {
     const file = `pages/${fileName}.html`;
 
     const contentDiv = document.getElementById("selected");
-
     fetch(`data/${fileName}.json`)
         .then(response => {
             if (!response.ok) {
@@ -96,10 +95,12 @@ function loadContent(fileName, id) {
         .catch(error => {
             console.error(`Error loading JSON data: ${error.message}`);
         });
+
+    if (document.getElementById("mobile-menu").style.display != "none") {
+        toggleMenu();
+    }
 }
 
-
-// TODO: Fix this function to load the experience and project from the JSON files
 function onLoad() {
     console.log("Page loaded");
     loadContent("home");
@@ -113,6 +114,7 @@ function onLoad() {
         })
         .then(data => {
             var list = [];
+            var mobileList = [];
 
             data.data.forEach((item, index) => {
                 var experience = document.createElement("div");
@@ -121,10 +123,20 @@ function onLoad() {
                     loadContent("experience", index);
                 };
                 list.push(experience);
+
+                var mobileExperience = document.createElement("div");
+                mobileExperience.innerText = item.name + " @ " + item.company;
+                mobileExperience.onclick = function () {
+                    loadContent("experience", index);
+                };
+                mobileList.push(mobileExperience);
             });
 
             list.forEach(item => {
                 document.getElementById("experience").appendChild(item);
+            });
+            mobileList.forEach(item => {
+                document.getElementById("mobile-experience").appendChild(item);
             });
 
         })
@@ -141,6 +153,7 @@ function onLoad() {
         })
         .then(data => {
             var list = [];
+            var mobileList = [];
 
             data.data.forEach((item, index) => {
                 var project = document.createElement("div");
@@ -149,14 +162,37 @@ function onLoad() {
                     loadContent("projects", index);
                 };
                 list.push(project);
+
+                var mobileProject = document.createElement("div");
+                mobileProject.innerText = item.name;
+                mobileProject.onclick = function () {
+                    loadContent("projects", index);
+                };
+                mobileList.push(mobileProject);
             });
 
             list.forEach(item => {
                 document.getElementById("projects").appendChild(item);
+            });
+            mobileList.forEach(item => {
+                document.getElementById("mobile-projects").appendChild(item);
             });
 
         })
         .catch(error => {
             console.error(`Error loading JSON data: ${error.message}`);
         });
+}
+
+function toggleMenu() {
+    if (document.getElementById("mobile-menu").style.display == "none") {
+        document.getElementById("mobile-menu").style.display = "block";
+        document.getElementById("main").style.display = "none";
+        document.getElementById("mobile-contact").style.display = "none";
+    } else {
+        document.getElementById("mobile-menu").style.display = "none";
+        document.getElementById("main").style.display = "block";
+        document.getElementById("mobile-contact").style.display = "block";
+
+    }
 }
