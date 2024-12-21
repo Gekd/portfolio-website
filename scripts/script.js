@@ -189,7 +189,7 @@ function toggleMenu() {
         document.getElementById("mobile-menu").style.display = "block";
         document.getElementById("main").style.display = "none";
         document.getElementById("mobile-contact").style.display = "none";
-    } else {
+    } else if (window.innerWidth < 768) {
         document.getElementById("mobile-menu").style.display = "none";
         document.getElementById("main").style.display = "block";
         document.getElementById("mobile-contact").style.display = "block";
