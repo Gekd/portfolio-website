@@ -18,29 +18,53 @@ function loadContent(fileName, id) {
             return response.json();
         })
         .then(data => {
+            document.getElementById("selected").className = "terminal";
+
             if (fileName == "projects") {
                 clearContent();
                 var list = [];
 
-                var name = document.createElement("div");
-                name.innerText = data.data[id].name;
-                list.push(name);
+                var project = document.createElement("div");
+                var projectTitle = document.createElement("p");
+                projectTitle.innerHTML = `
+                    <span class="green-text">robin@otter:</span> 
+                    <span class="blue-text">~</span> cat /${data.data[id].name}.txt
+                `;
+                project.className = "terminal-line"
+                project.appendChild(projectTitle);
+                list.push(project);
 
                 var year = document.createElement("div");
-                year.innerText = data.data[id].year;
+                year.className = "terminal-line"
+                var yearP = document.createElement("p");
+                yearP.innerHTML = `year: <span class="blue-text">${data.data[id].year}</span>`;
+                year.appendChild(yearP);
                 list.push(year);
 
                 data.data[id].description.forEach(descriptions => {
                     var description = document.createElement("div");
-                    description.innerText = descriptions;
+                    description.className = "terminal-line"
+                    var descriptionP = document.createElement("p");
+                    descriptionP.innerText = descriptions;
+                    description.appendChild(descriptionP);
                     list.push(description);
                 });
 
-                data.data[id].technologies.forEach(technologies => {
-                    var technology = document.createElement("div");
-                    technology.innerText = technologies;
-                    list.push(technology);
-                });
+                var technology = document.createElement("div");
+                technology.className = "terminal-line"
+                var technologyP = document.createElement("p");
+                technologyP.innerHTML = `technologies: <span class="green-text">${data.data[id].technologies}</span>`;
+                technology.appendChild(technologyP);
+                list.push(technology);
+
+                var link = document.createElement("div");
+                link.className = "terminal-line"
+                var linkA = document.createElement("a");
+                linkA.href = data.data[id].githubUrl;
+                linkA.innerHTML = `link: <span class="yellowish-text"> Available on Github </span>`;
+                link.appendChild(linkA);
+                list.push(link);
+
 
                 list.forEach(item => {
                     document.getElementById("selected").appendChild(item);
@@ -50,25 +74,45 @@ function loadContent(fileName, id) {
                 clearContent();
                 var list = [];
 
-                var name = document.createElement("div");
-                name.innerText = data.data[id].name;
-                list.push(name);
+                var project = document.createElement("div");
+                var projectTitle = document.createElement("p");
+                projectTitle.innerHTML = `
+                    <span class="green-text">robin@otter:</span> 
+                    <span class="blue-text">~</span> cat /${data.data[id].name}.txt
+                `;
+                project.className = "terminal-line"
+                project.appendChild(projectTitle);
+                list.push(project);
 
                 var company = document.createElement("div");
-                company.innerText = data.data[id].company;
+                company.className = "terminal-line"
+                var companyP = document.createElement("p");
+                companyP.innerHTML = `<span class="yellowish-text">@</span> ${data.data[id].company}`;
+                company.appendChild(companyP);
                 list.push(company);
 
+
+
                 var date = document.createElement("div");
-                date.innerText = data.data[id].date;
+                date.className = "terminal-line"
+                var dateP = document.createElement("p");
+                dateP.innerHTML = `year: <span class="blue-text">${data.data[id].date}</span>`;
+                date.appendChild(dateP);
                 list.push(date);
 
                 var title = document.createElement("div");
-                title.innerText = data.data[id].title;
+                title.className = "terminal-line"
+                var titleP = document.createElement("p");
+                titleP.innerHTML = `title: <span class="green-text">${data.data[id].title}</span>`;
+                title.appendChild(titleP);
                 list.push(title);
 
                 data.data[id].description.forEach(descriptions => {
                     var description = document.createElement("div");
-                    description.innerText = descriptions;
+                    description.className = "terminal-line"
+                    var descriptionP = document.createElement("p");
+                    descriptionP.innerText = descriptions;
+                    description.appendChild(descriptionP);
                     list.push(description);
                 });
 
@@ -105,9 +149,7 @@ function loadContent(fileName, id) {
 
 function onLoad() {
     console.log("Page loaded");
-    loadContent("home");
-
-    request();
+    loadContent('home');
 
     fetch(`data/experience.json`)
         .then(response => {
@@ -199,47 +241,4 @@ function toggleMenu() {
         document.getElementById("mobile-contact").style.display = "block";
 
     }
-}
-
-function request() {
-    const url = 'https://api.github.com/graphql';
-    const token = process.env.KEY;
-    const query = `
-  query($login: String!) {
-    user(login: $login) {
-      repositories(first: 100) {
-        totalCount
-      }
-    }
-  }
-`;
-
-    const variables = {
-        login: 'Gekd'  // Replace with your GitHub username
-    };
-
-    const headers = {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json'
-    };
-
-    const requestBody = JSON.stringify({
-        query: query,
-        variables: variables
-    });
-
-    fetch(url, {
-        method: 'POST',
-        headers: headers,
-        body: requestBody
-    })
-        .then(response => response.json())
-        .then(data => {
-            const repoCount = data.data.user.repositories.totalCount;
-            console.log(`Repository count for Gekd: ${repoCount}`);
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
-
 }

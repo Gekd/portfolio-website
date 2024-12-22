@@ -1,0 +1,32 @@
+{
+    "data": [
+        {
+            "name": "Busiest time calculator",
+            "images": [],
+            "year": 2024,
+            "githubUrl": "https://github.com/Gekd/busiest_time_calculator",
+            "description": [
+                "Command-line calculator to determine when most workers take breaks."
+            ],
+            "technologies": [
+                " C#",
+                " Docker"
+            ]
+        },
+        {
+            "name": "Portfolio website",
+            "images": [],
+            "year": 2024,
+            "githubUrl": "https://github.com/Gekd/portfolio-website",
+            "description": [
+                "Built this website in a 24h to showcase my projects and skills."
+            ],
+            "technologies": [
+                " HTML",
+                " CSS",
+                " Javascript",
+                " Figma"
+            ]
+        }
+    ]
+}

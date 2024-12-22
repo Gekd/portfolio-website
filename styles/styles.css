@@ -21,6 +21,7 @@ body {
 .logo {
   height: 200px;
   width: 200px;
+  cursor: pointer;
 }
 
 .left-column {
@@ -40,6 +41,7 @@ body {
   align-items: center;
   gap: 10px;
   padding: 4px 0;
+  cursor: pointer;
 }
 #experience div:hover {
   color: var(--green-color);
@@ -49,6 +51,7 @@ body {
   align-items: center;
   gap: 10px;
   padding: 4px 0;
+  cursor: pointer;
 }
 #projects div:hover {
   color: var(--blue-color);
@@ -78,10 +81,10 @@ body {
 .custom-border {
   position: relative;
   padding: 20px;
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
+  border-top: 2px solid var(--text-color);
+  border-bottom: 2px solid var(--text-color);
   border-radius: 4px;
-  transition: border-color 0.3s; /* Smooth transition for border-top and border-bottom */
+  transition: border-color 0.3s;
 }
 
 .custom-border::before,
@@ -91,7 +94,7 @@ body {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: repeating-linear-gradient(white 0, white 16px, transparent 16px, transparent 18px);
+  background: repeating-linear-gradient(var(--text-color) 0, var(--text-color) 16px, transparent 16px, transparent 18px);
   transition: background-color 0.3s, border-color 0.3s;
 }
 
@@ -132,7 +135,7 @@ body {
   margin-bottom: 10px;
 }
 .terminal {
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   background-color: var(--bg-color-light);
@@ -146,12 +149,19 @@ body {
 .terminal-line p {
   margin: 0;
 }
+.terminal-line a {
+  color: var(--text-color);
+  text-decoration: none;
+}
 
 .green-text {
   color: var(--green-color);
 }
 .blue-text {
   color: var(--blue-color);
+}
+.yellowish-text {
+  color: var(--hover-color)
 }
 
 .border-title {
@@ -229,9 +239,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border: 1px dashed var(--text-color);
     border-radius: 4px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
   .header-logo {
     height: 30px;
