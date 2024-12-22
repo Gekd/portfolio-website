@@ -117,7 +117,7 @@ body {
   background: repeating-linear-gradient(var(--hover-color) 0, var(--hover-color) 16px, transparent 16px, transparent 18px);
 }
 .custom-border:hover .border-title {
-  color: var(--hover-color); /* Change title color on hover */
+  color: var(--hover-color);
 }
 
 .main {
@@ -137,11 +137,16 @@ body {
   flex-direction: column;
   background-color: var(--bg-color-light);
   border-radius: 4px;
+  gap: 4px;
 }
 .terminal-line {
   display: flex;
   align-items: center;
 }
+.terminal-line p {
+  margin: 0;
+}
+
 .green-text {
   color: var(--green-color);
 }

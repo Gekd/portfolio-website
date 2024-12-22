@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 function clearContent() {
     document.getElementById("selected").innerHTML = "";
 }
@@ -105,6 +107,8 @@ function onLoad() {
     console.log("Page loaded");
     loadContent("home");
 
+    request();
+
     fetch(`data/experience.json`)
         .then(response => {
             if (!response.ok) {
@@ -195,4 +199,47 @@ function toggleMenu() {
         document.getElementById("mobile-contact").style.display = "block";
 
     }
+}
+
+function request() {
+    const url = 'https://api.github.com/graphql';
+    const token = process.env.KEY;
+    const query = `
+  query($login: String!) {
+    user(login: $login) {
+      repositories(first: 100) {
+        totalCount
+      }
+    }
+  }
+`;
+
+    const variables = {
+        login: 'Gekd'  // Replace with your GitHub username
+    };
+
+    const headers = {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+    };
+
+    const requestBody = JSON.stringify({
+        query: query,
+        variables: variables
+    });
+
+    fetch(url, {
+        method: 'POST',
+        headers: headers,
+        body: requestBody
+    })
+        .then(response => response.json())
+        .then(data => {
+            const repoCount = data.data.user.repositories.totalCount;
+            console.log(`Repository count for Gekd: ${repoCount}`);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+
 }
