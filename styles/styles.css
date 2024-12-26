@@ -15,8 +15,7 @@ body {
   margin: 0px;
   height: calc(100vh - 40px);
   display: flex;
-  font-family: "Poppins", serif;
-  font-weight: 400;
+  font-family: "Ubuntu Mono";
 }
 .logo {
   height: 200px;
@@ -140,7 +139,7 @@ body {
 
 .main {
   flex: 2;
-  padding: 10px;
+  padding: 20px;
 }
 
 .logo-container {
@@ -160,6 +159,7 @@ body {
 .terminal-line {
   display: flex;
   align-items: center;
+  padding: 2px 0;
 }
 .terminal-line p {
   margin: 0;
