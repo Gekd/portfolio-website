@@ -1,6 +1,21 @@
 {
     "data": [
         {
+            "name": "GoChain",
+            "images": [],
+            "year": 2025,
+            "githubUrl": "https://github.com/Gekd/GoChain/",
+            "description": [
+                "Minimal dockerized blockchain network written in Go with RESTful peer communication, dynamic node management, and basic proof-of-work consensus."
+            ],
+            "technologies": [
+                " Go",
+                " Docker",
+                " Blockchain",
+                " REST API"
+            ]
+        },
+        {
             "name": "Maps to ATAK formatter",
             "images": [],
             "year": 2025,
