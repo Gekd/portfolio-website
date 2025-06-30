@@ -27,9 +27,8 @@ function loadContent(fileName, id) {
                 var project = document.createElement("div");
                 var projectTitle = document.createElement("p");
                 projectTitle.innerHTML = `
-                    <span class="green-text">robin@otter:</span> 
-                    <span class="blue-text">~</span> cat /${data.data[id].name}.txt
-                `;
+                    <span class="green-text">robin@otter</span>:<span class="blue-text">~</span>$ cat /${data.data[id].name}.txt
+                    `;
                 project.className = "terminal-line"
                 project.appendChild(projectTitle);
                 list.push(project);
@@ -77,8 +76,7 @@ function loadContent(fileName, id) {
                 var project = document.createElement("div");
                 var projectTitle = document.createElement("p");
                 projectTitle.innerHTML = `
-                    <span class="green-text">robin@otter:</span> 
-                    <span class="blue-text">~</span> cat /${data.data[id].name}.txt
+                    <span class="green-text">robin@otter</span>:<span class="blue-text">~</span>$ cat /${data.data[id].name}.txt
                 `;
                 project.className = "terminal-line"
                 project.appendChild(projectTitle);
@@ -232,7 +230,7 @@ function onLoad() {
 
 function toggleMenu() {
     if (document.getElementById("mobile-menu").style.display == "none") {
-        document.getElementById("mobile-menu").style.display = "block";
+        document.getElementById("mobile-menu").style.display = "flex";
         document.getElementById("main").style.display = "none";
         document.getElementById("mobile-contact").style.display = "none";
     } else if (window.innerWidth < 768) {
