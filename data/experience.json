@@ -4,31 +4,35 @@
             "name": "Student",
             "company": "University of Tartu",
             "date": "Aug 2024 - Now",
-            "title": "Computer Science student ( 3 year curriculum in 2 years )",
+            "title": "Computer Science student ( 3-year curriculum in 2 years )",
             "description": [
-                "I am currently studying computer science at the University of Tartu, where I am pursuing a 3-year curriculum in 2 years.",
-                "I am eager to learn new technologies and methodologies and constantly seek opportunities to expand my knowledge and skills.",
-                "For example, I actively participate in competitions and hackathons to challenge myself and strive to be the best."
+                "I'm studying Computer Science at the University of Tartu, completing a 3-year curriculum in 2 years.",
+                "I enjoy experimenting and learning new technologies. For example, I actively participate in competitions and hackathons to challenge myself and to try to be the best."
             ]
         },
         {
             "name": "Freelancer",
             "company": "For Hire",
             "date": "Jun 2024 - Now",
-            "title": "Full-stack developer ( Php, HTML, CSS, Javascript, Wordpress )",
+            "title": "Full-stack developer ( Typescript, HTML, CSS, Vue, Wordpress )",
             "description": [
-                "Fresh out of the mandatory conscript service I couldn't find a job that would suit my flexible schedule that University studies required.",
-                "I decided to provide services to small businesses and individuals who need websites, bug fixes, or custom features."
+                "After completing mandatory conscript service, I chose to pursue freelance development work to accommodate the flexibility required by my university schedule.",
+                "I provide services to small businesses and individuals, including website development, bug fixes, and custom feature implementation."
             ]
         },
         {
-            "name": "Developer + Designer",
+            "name": "Engineer + Product Owner",
             "company": "Rent&go",
             "date": "Feb 2021 - Aug 2023",
-            "title": "Mobile Application Developer and UI / UX designer ( Flutter, Dart, Kotlin, Swift, Figma)",
+            "title": "Full-stack Engineer and Product Owner ( Flutter, Dart, Kotlin, Swift, Figma)",
             "description": [
-                "I was the sole developer responsible for designing and developing the mobile application from the ground up.",
-                "Over a 2-year period, I accomplished the following: 1) Designed and developed the application's UI/UX using Figma, 2) Implemented core functionality, 3) Contributed to the company's business logic, 4) Built the application using the Flutter framework, 5) Tested the application across multiple devices and platforms, and 6) Deployed and released the application on both Android and iOS platforms."
+                "I was responsible for designing and building a cross-platform mobile application from the ground up. ",
+                "Over a 2-year period, I:",
+                "1) Designed the UI/UX in Figma",
+                "2) Created and implemented business logic in collaboration with stakeholders", 
+                "3) Built and maintained the application using the Flutter framework",
+                "4) Tested the application across multiple devices and platforms",
+                "5) Published the application on both Android and iOS."
             ]
         },
         {
@@ -37,14 +41,14 @@
             "date": "Jul 2022 - Jul 2022",
             "title": "Activity Coordinator ( Communication, Teaching, Organising )",
             "description": [
-                "Organised outdoor events mostly for company "
+                "Organised outdoor events mostly for corporate groups, where I was responsible for coordinating activities, communicating with clients, and teaching participants how to use the equipment."
             ]
         },
         {
             "name": "Content Producer",
             "company": "CTF Tech",
             "date": "May 2022 - Jun 2022",
-            "title": "Cyber Security Content Producer ( Writing, Editing, Proofreading, Research, Filming, Editing )",
+            "title": "Cyber Security Content Producer ( Writing, Proofreading, Research, Filming, Editing )",
             "description": [
                 "I was responsible for producing educational content for the company's YouTube channel."
             ]

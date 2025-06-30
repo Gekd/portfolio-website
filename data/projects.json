@@ -29,12 +29,42 @@
             ]
         },
         {
+            "name": "Machine Learning with Java",
+            "images": [],
+            "year": 2024,
+            "githubUrl": "https://github.com/chirbard/java-handwritten-digits-classifier/",
+            "description": [
+                "Deep neural network to classify drawn digits 0-9. Project is written in Java and only needs a library for GUI."
+            ],
+            "technologies": [
+                " Java",
+                " Machine Learning"
+            ]
+        },
+        {
+            "name": "Google - Gemini Long Context Competition",
+            "images": [],
+            "year": 2025,
+            "githubUrl": "https://github.com/chirbard/gemini-long-context-competition",
+            "description": [
+                "juur.ai is a web application developed for the 'Google - Gemini Long Context' competition and the University of Tartu IDS 2024 course.",
+                "The application leverages Gemini's high token capacity to efficiently analyze 390 laws."
+            ],
+            "technologies": [
+                " Python",
+                " Jupyter Notebook",
+                " LLM",
+                " Prompt Engineering",
+                " Docker"
+            ]
+        },
+        {
             "name": "Busiest time calculator",
             "images": [],
             "year": 2024,
             "githubUrl": "https://github.com/Gekd/busiest_time_calculator",
             "description": [
-                "Command-line calculator to determine when most workers take breaks."
+                "Command-line tool to calculate when most workers take breaks."
             ],
             "technologies": [
                 " C#",
@@ -47,7 +77,7 @@
             "year": 2024,
             "githubUrl": "https://github.com/Gekd/portfolio-website",
             "description": [
-                "Built this website in a 24h to showcase my projects and skills."
+                "Made this website in a day to showcase my projects and skills. It's styled to look like a terminal, because I like the simplicity."
             ],
             "technologies": [
                 " HTML",
