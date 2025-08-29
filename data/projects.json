@@ -1,6 +1,21 @@
 {
     "data": [
         {
+            "name": "Estonian Student Rocket website",
+            "images": [],
+            "year": 2025,
+            "websiteUrl": "https://tudengirakett.ee/",
+            "description": [
+                "The official website of the Estonian Student Rocket Team, featuring innovative rocketry projects, team milestones, and mission updates."
+            ],
+            "technologies": [
+                " Vue",
+                " TypeScript",
+                " HTML",
+                " CSS"
+            ]
+        },
+        {
             "name": "GoChain",
             "images": [],
             "year": 2025,
