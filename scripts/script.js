@@ -56,13 +56,24 @@ function loadContent(fileName, id) {
                 technology.appendChild(technologyP);
                 list.push(technology);
 
-                var link = document.createElement("div");
-                link.className = "terminal-line"
-                var linkA = document.createElement("a");
-                linkA.href = data.data[id].githubUrl;
-                linkA.innerHTML = `link: <span class="yellowish-text"> Available on Github </span>`;
-                link.appendChild(linkA);
-                list.push(link);
+                if (data.data[id].githubUrl) {
+                    var link = document.createElement("div");
+                    link.className = "terminal-line"
+                    var linkA = document.createElement("a");
+                    linkA.href = data.data[id].githubUrl;
+                    linkA.innerHTML = `link: <span class="yellowish-text"> Available on Github </span>`;
+                    link.appendChild(linkA);
+                    list.push(link);
+                }
+                if (data.data[id].websiteUrl) {
+                    var link = document.createElement("div");
+                    link.className = "terminal-line"
+                    var linkA = document.createElement("a");
+                    linkA.href = data.data[id].websiteUrl;
+                    linkA.innerHTML = `link: <span class="yellowish-text"> Available on Website </span>`;
+                    link.appendChild(linkA);
+                    list.push(link);
+                }
 
 
                 list.forEach(item => {
