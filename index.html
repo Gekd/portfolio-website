@@ -36,6 +36,7 @@
             <div><img src="images/css.svg" class="image" alt="css">CSS</div>
             <div><img src="images/git.svg" class="image" alt="git">Git</div>
             <div><img src="images/vue.svg" class="image" alt="vue">Vue</div>
+            <div><img src="images/nextjs.svg" class="image" alt="nextjs">Next.js</div>
             <div><img src="images/node.svg" class="image" alt="node">Node.js</div>
             <div><img src="images/figma.svg" class="image" alt="figma">Figma</div>
             <div><img src="images/wordpress.svg" class="image" alt="wordpress">Wordpress</div>
@@ -62,6 +63,7 @@
             <div><img src="images/css.svg" class="image" alt="css">CSS</div>
             <div><img src="images/git.svg" class="image" alt="git">Git</div>
             <div><img src="images/vue.svg" class="image" alt="vue">Vue</div>
+            <div><img src="images/nextjs.svg" class="image" alt="nextjs">Next.js</div>
             <div><img src="images/node.svg" class="image" alt="node">Node.js</div>
             <div><img src="images/figma.svg" class="image" alt="figma">Figma</div>
             <div><img src="images/wordpress.svg" class="image" alt="wordpress">Wordpress</div>
@@ -75,7 +77,9 @@
     </div>
     <div class="right-column">
         <div class="main custom-border" id="main">
-            <div class="logo-container"><img src="images/ascii-logo.png" class="logo" alt="logo" onclick="loadContent('home')"></div>
+            <div class="ascii">
+                <pre id="ascii-logo" onclick="loadContent('home')"></pre>
+            </div>
             <div id="selected"></div>
         </div>
     </div>
@@ -88,6 +92,110 @@
     
 
 </body>
+
+<script>
+
+const pre = document.getElementById("ascii-logo");
+let x = 1760, z = 0, yAngle = 0;
+
+const WIDTH = 68;
+const HEIGHT = 28;
+
+const chars = ".,-~:;=!*#$@";
+
+function inShape(x, y, z) {
+  if (z < 0 || z > 3) return 0;
+
+  const r2 = x * x + y * y;
+  const r = Math.sqrt(r2);
+  const abs_sum = Math.abs(x - y) + Math.abs(x + y);
+
+  if (r2 <= 1.0) return 1;
+  if (Math.abs(r2 - 4.0) < 0.1) return 2;
+  if (Math.abs(r2 - 9.0) < 0.1) return 3;
+  if (Math.abs(r2 - 16.0) < 0.1 && x >= 0 && y >= 0) return 4;
+  if (Math.abs(r2 - 16.0) < 0.1 && x <= 0 && y <= 0) return 5;
+  if (r >= 2.0 && r <= 3.0) return 6;
+  if (r >= 4.0 && r <= 5.0 && x >= 0 && y >= 0) return 7;
+  if (r >= 4.0 && r <= 5.0 && x <= 0 && y <= 0) return 8;
+  if (abs_sum >= 8.0 && abs_sum <= 10.0 && x <= 0 && y >= 0) return 9;
+  if (abs_sum >= 8.0 && abs_sum <= 10.0 && x >= 0 && y <= 0) return 10;
+  if (Math.abs(abs_sum - 8.0) < 0.1 && x >= 0 && y <= 0) return 11;
+  if (Math.abs(abs_sum - 8.0) < 0.1 && x <= 0 && y >= 0) return 12;
+
+  return 0;
+}
+
+function normalize(x, y, z) {
+  const len = Math.sqrt(x * x + y * y + z * z);
+  return len === 0 ? [0, 0, 0] : [x / len, y / len, z / len];
+}
+
+function dot(ax, ay, az, bx, by, bz) {
+  return ax * bx + ay * by + az * bz;
+}
+
+setInterval(() => {
+  z += 0.07;
+  yAngle += 0.03;
+
+  const b = new Array(x).fill(" ");
+  for (let i = 0; i < HEIGHT; i++) {
+    b.splice(i * WIDTH + WIDTH - 1, 0, "\n");
+  }
+
+  const zbuf = new Array(x).fill(0);
+
+  const A = z;
+  const B = yAngle;
+  const cA = Math.cos(A), sA = Math.sin(A);
+  const cB = Math.cos(B), sB = Math.sin(B);
+
+  const lightDir = normalize(-1, 0, -1);
+
+  for (let zz = 0; zz <= 3; zz += 0.1) {
+    for (let yy = -5; yy <= 5; yy += 0.1) {
+      for (let xx = -5; xx <= 5; xx += 0.1) {
+
+        const shape = inShape(xx, yy, zz);
+        if (!shape) continue;
+
+        const eps = 0.1;
+        const dx = inShape(xx + eps, yy, zz) - inShape(xx - eps, yy, zz);
+        const dy = inShape(xx, yy + eps, zz) - inShape(xx, yy - eps, zz);
+        const dz = inShape(xx, yy, zz + eps) - inShape(xx, yy, zz - eps);
+
+        const [nx, ny, nz] = normalize(dx, dy, dz);
+
+        const x1 = xx * cA - yy * sA;
+        const y1 = xx * sA + yy * cA;
+        const z1 = zz;
+
+        const x2 = x1 * cB + z1 * sB;
+        const y2 = y1;
+        const z2 = -x1 * sB + z1 * cB + 14;
+
+        const invZ = 1 / z2;
+        const xp = (WIDTH/2-4) + (x2 * invZ * 40) | 0;
+        const yp = 12 - (y2 * invZ * 20) | 0;
+        const idx = xp + yp * WIDTH;
+
+        if (yp >= 0 && yp < HEIGHT && xp >= 0 && xp < WIDTH - 1 && invZ > zbuf[idx]) {
+          zbuf[idx] = invZ;
+
+          let L = dot(nx, ny, nz, ...lightDir);
+          L = Math.max(0, L); 
+          const brightnessIndex = Math.floor(L * (chars.length - 1));
+          b[idx] = chars[brightnessIndex];
+        }
+      }
+    }
+  }
+
+  pre.textContent = b.join("");
+}, 70);
+</script>
+
 
 </html>
 
