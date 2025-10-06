@@ -21,7 +21,7 @@
             ]
         },
         {
-            "name": "Engineer + Product Owner",
+            "name": "Software Engineer",
             "company": "Rent&go",
             "date": "Feb 2021 - Aug 2023",
             "title": "Full-stack Engineer and Product Owner ( Flutter, Dart, Kotlin, Swift, Figma)",
@@ -33,24 +33,6 @@
                 "3) Built and maintained the application using the Flutter framework",
                 "4) Tested the application across multiple devices and platforms",
                 "5) Published the application on both Android and iOS."
-            ]
-        },
-        {
-            "name": "Activity Coordinator",
-            "company": "360 KRAADI",
-            "date": "Jul 2022 - Jul 2022",
-            "title": "Activity Coordinator ( Communication, Teaching, Organising )",
-            "description": [
-                "Organised outdoor events mostly for corporate groups, where I was responsible for coordinating activities, communicating with clients, and teaching participants how to use the equipment."
-            ]
-        },
-        {
-            "name": "Content Producer",
-            "company": "CTF Tech",
-            "date": "May 2022 - Jun 2022",
-            "title": "Cyber Security Content Producer ( Writing, Proofreading, Research, Filming, Editing )",
-            "description": [
-                "I was responsible for producing educational content for the company's YouTube channel."
             ]
         }
     ]
